@@ -33,16 +33,12 @@ header{
     position:sticky;
     top:0;
     z-index:1000;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     padding:17px 6%;
-
     background:rgba(7,9,13,.92);
     backdrop-filter:blur(15px);
-
     border-bottom:1px solid #1d2430;
 }
 
@@ -72,14 +68,11 @@ nav a:hover{
 
 .hero{
     min-height:520px;
-
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-
     text-align:center;
-
     padding:70px 20px;
 
     background:
@@ -89,16 +82,12 @@ nav a:hover{
 
 .hero-badge{
     display:inline-block;
-
     padding:8px 15px;
     margin-bottom:20px;
-
     border:1px solid #302d62;
     border-radius:30px;
-
     color:#aaa5ff;
     background:#111127;
-
     font-size:13px;
 }
 
@@ -114,7 +103,6 @@ nav a:hover{
 
 .hero p{
     max-width:620px;
-
     color:#9ca6b5;
     line-height:1.7;
     font-size:16px;
@@ -128,15 +116,11 @@ nav a:hover{
 
 .btn{
     display:inline-block;
-
     padding:13px 21px;
     margin:5px;
-
     border-radius:11px;
-
     text-decoration:none;
     font-weight:bold;
-
     transition:.25s;
 }
 
@@ -173,19 +157,13 @@ nav a:hover{
 
 .search-box input{
     width:100%;
-
     padding:16px 20px;
-
     border:1px solid #272d38;
     border-radius:14px;
-
     outline:none;
-
     background:#11151d;
     color:white;
-
     font-size:15px;
-
     box-shadow:0 10px 35px rgba(0,0,0,.35);
 }
 
@@ -209,7 +187,6 @@ nav a:hover{
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     margin-bottom:24px;
 }
 
@@ -226,10 +203,7 @@ nav a:hover{
 
 .grid{
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:18px;
 }
 
@@ -237,34 +211,24 @@ nav a:hover{
 
 .card{
     overflow:hidden;
-
     background:#10141b;
-
     border:1px solid #202631;
-
     border-radius:16px;
-
     transition:.25s;
 }
 
 .card:hover{
     transform:translateY(-5px);
-
     border-color:#3d3a72;
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.35);
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
 }
 
 .card img,
 .card video{
     width:100%;
     height:190px;
-
     object-fit:cover;
-
     display:block;
-
     background:#090b10;
 }
 
@@ -273,8 +237,9 @@ nav a:hover{
 }
 
 .card-content h3{
-    font-size:16px;
+    font-size:14px;
     margin-bottom:7px;
+    word-break:break-word;
 }
 
 .card-content p{
@@ -284,16 +249,17 @@ nav a:hover{
 
 /* ALBUMS */
 
+.album-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
 .album{
     padding:25px;
-
-    background:
-    linear-gradient(145deg,#121722,#0d1016);
-
+    background:linear-gradient(145deg,#121722,#0d1016);
     border:1px solid #222936;
-
     border-radius:17px;
-
     transition:.25s;
 }
 
@@ -320,32 +286,23 @@ nav a:hover{
 
 .stats{
     display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:16px;
+    margin-top:10px;
 }
 
 .stat{
     text-align:center;
-
     padding:28px 10px;
-
     background:#10141b;
-
     border:1px solid #202631;
-
     border-radius:16px;
 }
 
 .stat strong{
     display:block;
-
     font-size:30px;
-
     color:#8179ff;
-
     margin-bottom:7px;
 }
 
@@ -354,35 +311,35 @@ nav a:hover{
     font-size:13px;
 }
 
-/* EMPTY MESSAGE */
+/* EMPTY */
 
 .empty{
     padding:40px 20px;
-
     text-align:center;
-
     color:#697281;
-
     border:1px dashed #2a303b;
-
     border-radius:15px;
+    grid-column:1/-1;
+}
+
+/* LOADING */
+
+.loading{
+    padding:35px;
+    text-align:center;
+    color:#8179ff;
+    grid-column:1/-1;
 }
 
 /* FOOTER */
 
 footer{
     margin-top:30px;
-
     padding:40px 20px;
-
     text-align:center;
-
     background:#05070a;
-
     border-top:1px solid #1a2029;
-
     color:#697281;
-
     font-size:13px;
 }
 
@@ -410,7 +367,7 @@ footer{
     }
 
     nav a{
-        margin-left:9px;
+        margin-left:7px;
         font-size:11px;
     }
 
@@ -475,7 +432,7 @@ footer{
 <section class="hero" id="home">
 
     <div class="hero-badge">
-        🔐 My Private Digital Archive
+        🔐 My Digital Archive
     </div>
 
     <h1>
@@ -524,87 +481,15 @@ footer{
 
         <div>
             <h2>🖼️ Photos</h2>
-            <p>Your favorite memories</p>
+            <p>Your saved photos</p>
         </div>
 
     </div>
 
+    <div class="grid" id="photoGrid">
 
-    <div class="grid">
-
-        <!-- PHOTO 1 -->
-
-        <div class="card archive-item">
-
-            <img
-            src="https://picsum.photos/800/600?random=11"
-            alt="My Photo">
-
-            <div class="card-content">
-
-                <h3>My Memory 01</h3>
-
-                <p>Personal Photo</p>
-
-            </div>
-
-        </div>
-
-
-        <!-- PHOTO 2 -->
-
-        <div class="card archive-item">
-
-            <img
-            src="https://picsum.photos/800/600?random=12"
-            alt="My Photo">
-
-            <div class="card-content">
-
-                <h3>My Memory 02</h3>
-
-                <p>Personal Photo</p>
-
-            </div>
-
-        </div>
-
-
-        <!-- PHOTO 3 -->
-
-        <div class="card archive-item">
-
-            <img
-            src="https://picsum.photos/800/600?random=13"
-            alt="My Photo">
-
-            <div class="card-content">
-
-                <h3>My Memory 03</h3>
-
-                <p>Personal Photo</p>
-
-            </div>
-
-        </div>
-
-
-        <!-- PHOTO 4 -->
-
-        <div class="card archive-item">
-
-            <img
-            src="https://picsum.photos/800/600?random=14"
-            alt="My Photo">
-
-            <div class="card-content">
-
-                <h3>My Memory 04</h3>
-
-                <p>Personal Photo</p>
-
-            </div>
-
+        <div class="loading">
+            ⏳ Loading photos...
         </div>
 
     </div>
@@ -625,49 +510,439 @@ footer{
 
     </div>
 
+    <div class="grid" id="videoGrid">
 
-    <div class="grid">
+        <div class="loading">
+            ⏳ Loading videos...
+        </div>
+
+    </div>
+
+</section>
 
 
-        <div class="card archive-item">
+<!-- ALBUMS -->
 
-            <video controls
-            poster="https://picsum.photos/800/600?random=21">
+<section class="container" id="albums">
 
-                <!-- Put your video URL here -->
+    <div class="section-heading">
 
-                <source src="" type="video/mp4">
+        <div>
+            <h2>📁 Albums</h2>
+            <p>Organize your memories</p>
+        </div>
 
-                Your browser does not support video.
+    </div>
 
-            </video>
+    <div class="album-grid">
 
-            <div class="card-content">
+        <div class="album">
+            <div class="album-icon">📷</div>
+            <h3>Photos</h3>
+            <p>All your saved photos.</p>
+        </div>
 
-                <h3>My Video 01</h3>
+        <div class="album">
+            <div class="album-icon">🎬</div>
+            <h3>Videos</h3>
+            <p>All your saved videos.</p>
+        </div>
 
-                <p>Personal Video</p>
+        <div class="album">
+            <div class="album-icon">⭐</div>
+            <h3>Memories</h3>
+            <p>Your special memories.</p>
+        </div>
 
-            </div>
+    </div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="container">
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <strong id="photoCount">0</strong>
+
+            <span>Photos</span>
 
         </div>
 
 
-        <div class="card archive-item">
+        <div class="stat">
 
-            <video controls
-            poster="https://picsum.photos/800/600?random=22">
+            <strong id="videoCount">0</strong>
 
-                <source src="" type="video/mp4">
+            <span>Videos</span>
 
-                Your browser does not support video.
+        </div>
 
-            </video>
 
-            <div class="card-content">
+        <div class="stat">
 
-                <h3>My Video 02</h3>
+            <strong id="totalCount">0</strong>
 
-                <p>Personal Video</p>
+            <span>Total Files</span>
 
-            </div
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        📦 Kamil <span>Archive</span>
+    </div>
+
+    <p>
+        My personal digital archive © 2026
+    </p>
+
+</footer>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+/*
+==================================================
+SUPABASE SETTINGS
+==================================================
+*/
+
+const SUPABASE_URL =
+"https://wbybzuvmadqotdntzbhg.supabase.co";
+
+
+/*
+IMPORTANT:
+Paste your PUBLISHABLE key below.
+Do NOT use your Secret / service_role key.
+*/
+
+const SUPABASE_KEY =
+"sb_publishable_t_-66";
+
+
+/*
+Your Supabase Storage bucket name
+*/
+
+const BUCKET =
+"Kamil archive";
+
+
+/*
+Create Supabase client
+*/
+
+const supabaseClient =
+window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+
+/*
+==================================================
+LOAD FILES
+==================================================
+*/
+
+async function loadArchive(){
+
+    const photoGrid =
+        document.getElementById("photoGrid");
+
+    const videoGrid =
+        document.getElementById("videoGrid");
+
+
+    photoGrid.innerHTML =
+        '<div class="loading">⏳ Loading photos...</div>';
+
+    videoGrid.innerHTML =
+        '<div class="loading">⏳ Loading videos...</div>';
+
+
+    try{
+
+        const result =
+            await supabaseClient
+            .storage
+            .from(BUCKET)
+            .list("",{
+                limit:1000,
+                sortBy:{
+                    column:"created_at",
+                    order:"desc"
+                }
+            });
+
+
+        const data = result.data;
+        const error = result.error;
+
+
+        if(error){
+
+            console.error(error);
+
+            photoGrid.innerHTML =
+                '<div class="empty">❌ Photos load হয়নি। Storage policy check করুন।</div>';
+
+            videoGrid.innerHTML =
+                '<div class="empty">❌ Videos load হয়নি। Storage policy check করুন।</div>';
+
+            return;
+        }
+
+
+        photoGrid.innerHTML = "";
+        videoGrid.innerHTML = "";
+
+
+        let photoCount = 0;
+        let videoCount = 0;
+
+
+        if(!data || data.length === 0){
+
+            photoGrid.innerHTML =
+                '<div class="empty">📷 No files found.</div>';
+
+            videoGrid.innerHTML =
+                '<div class="empty">🎬 No files found.</div>';
+
+            return;
+        }
+
+
+        data.forEach(file => {
+
+            if(!file.name) return;
+
+
+            const extension =
+                file.name
+                .split(".")
+                .pop()
+                .toLowerCase();
+
+
+            const photoTypes = [
+                "jpg",
+                "jpeg",
+                "png",
+                "gif",
+                "webp"
+            ];
+
+
+            const videoTypes = [
+                "mp4",
+                "webm",
+                "ogg",
+                "mov"
+            ];
+
+
+            const publicResult =
+                supabaseClient
+                .storage
+                .from(BUCKET)
+                .getPublicUrl(file.name);
+
+
+            const url =
+                publicResult.data.publicUrl;
+
+
+            /*
+            PHOTO
+            */
+
+            if(photoTypes.includes(extension)){
+
+                photoCount++;
+
+
+                const card =
+                    document.createElement("div");
+
+                card.className =
+                    "card archive-item";
+
+
+                card.dataset.name =
+                    file.name.toLowerCase();
+
+
+                card.innerHTML = `
+
+                    <img
+                        src="${url}"
+                        alt="${file.name}"
+                        loading="lazy"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>${file.name}</h3>
+
+                        <p>📷 Personal Photo</p>
+
+                    </div>
+
+                `;
+
+
+                photoGrid.appendChild(card);
+
+            }
+
+
+            /*
+            VIDEO
+            */
+
+            if(videoTypes.includes(extension)){
+
+                videoCount++;
+
+
+                const card =
+                    document.createElement("div");
+
+                card.className =
+                    "card archive-item";
+
+
+                card.dataset.name =
+                    file.name.toLowerCase();
+
+
+                let videoType =
+                    "video/mp4";
+
+
+                if(extension === "webm"){
+                    videoType = "video/webm";
+                }
+
+                if(extension === "ogg"){
+                    videoType = "video/ogg";
+                }
+
+                if(extension === "mov"){
+                    videoType = "video/quicktime";
+                }
+
+
+                card.innerHTML = `
+
+                    <video
+                        controls
+                        preload="metadata"
+                        playsinline
+                    >
+
+                        <source
+                            src="${url}"
+                            type="${videoType}"
+                        >
+
+                        Your browser does not support this video.
+
+                    </video>
+
+                    <div class="card-content">
+
+                        <h3>${file.name}</h3>
+
+                        <p>🎬 Personal Video</p>
+
+                    </div>
+
+                `;
+
+
+                videoGrid.appendChild(card);
+
+            }
+
+        });
+
+
+        /*
+        EMPTY STATES
+        */
+
+        if(photoCount === 0){
+
+            photoGrid.innerHTML =
+                '<div class="empty">📷 No photos found.</div>';
+
+        }
+
+
+        if(videoCount === 0){
+
+            videoGrid.innerHTML =
+                '<div class="empty">🎬 No videos found.</div>';
+
+        }
+
+
+        /*
+        COUNTS
+        */
+
+        document.getElementById("photoCount")
+        .textContent =
+            photoCount;
+
+
+        document.getElementById("videoCount")
+        .textContent =
+            videoCount;
+
+
+        document.getElementById("totalCount")
+        .textContent =
+            photoCount + videoCount;
+
+
+    }catch(error){
+
+        console.error(error);
+
+
+        photoGrid.innerHTML =
+            '<div class="empty">❌ Something went wrong.</div>';
+
+        videoGrid.innerHTML =
+            '<div class="empty">❌ Something went wrong.</div>';
+
+    }
+
+}
+
+
+/*
+==================================================
+SEARCH
+================================
